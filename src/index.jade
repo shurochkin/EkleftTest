@@ -1,0 +1,105 @@
+
+extends ./_layout.jade
+
+block content
+  #wrapper
+    section#catalog
+      header
+        h1 Каталог
+      .row
+        - list = ["СМИ сообщают, что в Индии был замечен новый внедорожник Chevrolet Trailblazer.","Официальные дилеры немецкого автоконцерна \"Audi\" в России начали прием заказов на 5-местный хетчбэк RS 3 Sportback.", "Datsun наращивает продажи в России","В России может появиться дизельный Hyundai ix25", "Lamborghini не хочет выпускать бюджетный спорткар за 200 000 долларов"]
+        each item in list
+          .col
+            .inner
+              a(href="#")
+                img(src="images/img.png")
+                h3= item
+
+    section#menu
+      header
+        h1 Меню
+      nav
+        ul
+          li 
+            a(href="#") Главная
+          li 
+            a(href="#") Каталог
+            .super-menu
+              .row
+                img(src="images/menu-img.jpg")
+                .col
+                  ul
+                    - menu1 = ["ТВ и Видео","Компьютерная техника","Фото и видео техника","Телефоны","Портативная техника", "Аудиотехника"]
+                    each item in menu1
+                      li
+                        a(href="#")= item
+                .col
+                  ul
+                    - menu2 = ["Автотехника","Техника для дома","Техника для кухни","Встраиваемая техника","Красота и Здоровье","Игры и приставки"]
+                    each item in menu2
+                      li
+                        a(href="#")= item
+          li 
+            a(href="#") О компании
+          li 
+            a(href="#") Контакты
+
+    section#forma
+      header
+        h1 Форма
+      .wrapper
+        .row
+          .col
+            .cstm-select
+              span 
+                | Ваш пол
+                i
+              select.cus-select(name="gender")
+                option(value="male") мужской
+                option(value="female") женский
+                option(value="other") другой
+          .col
+            .cstm-radio
+              input(type="radio", name="radio", value="1", id="radio1")
+              label(for="radio1")
+              input(type="radio", name="radio", value="2", id="radio2")
+              label(for="radio2")
+              input(type="radio", name="radio", value="3", id="radio3", checked)
+              label(for="radio3")
+          .col
+            .cstm-checkbox
+              input(type="checkbox", name="checkbox", value="1", id="box1")
+              label(for="box1")
+              input(type="checkbox", name="checkbox", value="2", id="box2")
+              label(for="box2")
+              input(type="checkbox", name="checkbox", value="3", id="box3", checked)
+              label(for="box3")
+          .col
+            p.label Отметьте что нибудь
+          .col
+            input.button(type="button", value="Кнопка")
+
+    section#slider
+      header
+        h1 Слайдер
+      .wrapper
+        input(type="radio", name="point", id="slide1", checked="checked")
+        input(type="radio", name="point", id="slide2")
+        input(type="radio", name="point", id="slide3")
+        input(type="radio", name="point", id="slide4")
+        .headers
+          a(href="#") В Индии был замечен новый Chevrolet Trailblazer
+          a(href="#") Datsun наращивает продажи в России
+          a(href="#") Ford Kuga ожидает премиальная модификация Vignale
+          a(href="#") Объем продаж Audi по всему миру вырос на 6%
+        .slider
+          .slides.slide1
+          .slides.slide2
+          .slides.slide3
+          .slides.slide4
+        .controls
+          label(for="slide1")
+          label(for="slide2")
+          label(for="slide3")
+          label(for="slide4")
+
